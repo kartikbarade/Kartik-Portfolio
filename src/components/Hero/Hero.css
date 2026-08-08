@@ -39,7 +39,7 @@
    Grid Background
 ========================= */
 
-/* .hero-grid {
+.hero-grid {
   position: absolute;
   inset: 0;
   background-image:
@@ -59,7 +59,7 @@
     transparent 90%
   );
   z-index: 0;
-} */
+}
 
 /* =========================
    Orbs
