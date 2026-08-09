@@ -137,6 +137,31 @@ const Hero = () => {
         }}
       />
 
+      {/* Floating Ghost */}
+<motion.div
+  className="hero-ghost"
+  animate={{
+    y: [0, -18, 0],
+    rotate: [-2, 2, -2],
+  }}
+  transition={{
+    duration: 4,
+    repeat: Infinity,
+    ease: "easeInOut",
+  }}
+>
+  <div className="ghost-body">
+    <div className="ghost-eyes">
+      <span></span>
+      <span></span>
+    </div>
+
+    <div className="ghost-mouth"></div>
+  </div>
+
+  <div className="ghost-glow"></div>
+</motion.div>
+
       {/* Floating Particles */}
       <div className="floating-particles">
         <span></span>
