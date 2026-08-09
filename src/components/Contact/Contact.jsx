@@ -169,7 +169,7 @@ function Contact() {
               <input
                 type="email"
                 name="reply_to"
-                placeholder="your@email.com"
+                placeholder="your@gmail.com"
                 required
               />
             </div>

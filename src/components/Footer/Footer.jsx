@@ -1,4 +1,4 @@
-import { FaArrowUp, FaEnvelope, FaGithub, FaLinkedin } from "react-icons/fa";
+import { FaArrowUp, FaGithub, FaInstagram, FaLinkedin } from "react-icons/fa";
 
 import "./Footer.css";
 
@@ -54,11 +54,13 @@ function Footer() {
             </a>
 
             <a
-              href="mailto:kartikybarade13@gmail.com"
-              aria-label="Email"
-            >
-              <FaEnvelope />
-            </a>
+  href="https://www.instagram.com/kb_studio_13"
+  target="_blank"
+  rel="noreferrer"
+  aria-label="Instagram"
+>
+  <FaInstagram />
+</a>
 
           </div>
 
