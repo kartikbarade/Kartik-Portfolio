@@ -277,6 +277,8 @@ function Projects() {
         </div>
 
         <div className="explore-projects">
+
+  {/* Existing GitHub Button */}
   <a
     href="https://github.com/kartikbarade"
     target="_blank"
@@ -286,6 +288,16 @@ function Projects() {
     Explore All Projects
     <FaGithub />
   </a>
+
+  {/* New Projects Page Button */}
+  <a
+    href="/all-projects"
+    className="explore-btn"
+  >
+    View All Projects
+    <span>↗</span>
+  </a>
+
 </div>
 
         {/* =========================

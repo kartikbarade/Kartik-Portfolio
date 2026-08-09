@@ -275,8 +275,11 @@
 .explore-projects {
   display: flex;
   justify-content: center;
+  align-items: center;
+  gap: 15px;
   margin-top: 50px;
   margin-bottom: 30px;
+  flex-wrap: wrap;
 }
 
 .explore-btn {
