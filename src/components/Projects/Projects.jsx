@@ -1,9 +1,8 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
 import { FaExternalLinkAlt, FaGithub } from "react-icons/fa";
-
+import { Link } from "react-router-dom";
 import "./Projects.css";
-
 const categories = ["All", "Websites", "UI/UX", "Data & AI"];
 
 const projects = [
@@ -278,7 +277,16 @@ function Projects() {
 
         <div className="explore-projects">
 
-  {/* Existing GitHub Button */}
+  {/* New Projects Page */}
+  <Link
+    to="/projects"
+    className="explore-btn"
+  >
+    View All Projects
+    <FaExternalLinkAlt />
+  </Link>
+
+  {/* GitHub Profile */}
   <a
     href="https://github.com/kartikbarade"
     target="_blank"
@@ -287,15 +295,6 @@ function Projects() {
   >
     Explore All Projects
     <FaGithub />
-  </a>
-
-  {/* New Projects Page Button */}
-  <a
-    href="/all-projects"
-    className="explore-btn"
-  >
-    View All Projects
-    <span>↗</span>
   </a>
 
 </div>
