@@ -1,0 +1,572 @@
+.project-progress-wrapper {
+  position: absolute;
+  left: 32px;
+  bottom: 90px;
+  z-index: 50;
+}
+
+/* =========================
+   MAIN CARD
+========================= */
+
+.project-progress-card {
+  position: relative;
+
+  width: 76px;
+  height: 76px;
+
+  overflow: hidden;
+
+  border: 1px solid rgba(157, 104, 255, 0.35);
+  border-radius: 20px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(24, 20, 42, 0.96),
+      rgba(10, 9, 18, 0.94)
+    );
+
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+
+  box-shadow:
+    0 15px 45px rgba(0, 0, 0, 0.45),
+    0 0 30px rgba(125, 70, 255, 0.10);
+
+  transition:
+    width 0.5s cubic-bezier(0.22, 1, 0.36, 1),
+    height 0.5s cubic-bezier(0.22, 1, 0.36, 1),
+    border-radius 0.4s ease,
+    box-shadow 0.4s ease;
+}
+
+/* subtle glow */
+
+.project-progress-card::before {
+  content: "";
+
+  position: absolute;
+
+  width: 130px;
+  height: 130px;
+
+  top: -80px;
+  right: -70px;
+
+  background: rgba(125, 65, 255, 0.20);
+
+  filter: blur(35px);
+
+  pointer-events: none;
+}
+
+
+/* =========================
+   HOVER
+========================= */
+
+.project-progress-card:hover {
+  width: 390px;
+  height: 590px;
+
+  border-radius: 24px;
+
+  box-shadow:
+    0 25px 70px rgba(0, 0, 0, 0.60),
+    0 0 60px rgba(125, 65, 255, 0.18);
+}
+
+
+/* =========================
+   MINI CARD
+========================= */
+
+.project-mini {
+  position: absolute;
+
+  inset: 0;
+
+  width: 76px;
+  height: 76px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  flex-direction: column;
+
+  gap: 3px;
+
+  transition:
+    opacity 0.2s ease,
+    transform 0.3s ease;
+}
+
+.project-mini-icon {
+  width: 34px;
+  height: 34px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 11px;
+
+  color: #c4a7ff;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(137, 82, 255, 0.18),
+      rgba(93, 45, 190, 0.08)
+    );
+
+  border: 1px solid rgba(151, 94, 255, 0.28);
+
+  box-shadow:
+    inset 0 0 15px rgba(145, 90, 255, 0.08),
+    0 0 18px rgba(125, 65, 255, 0.12);
+
+  font-size: 16px;
+}
+
+
+/* =========================
+   MINI TEXT
+========================= */
+
+.project-mini-text {
+  display: flex;
+
+  align-items: center;
+
+  gap: 5px;
+
+  color: #77758a;
+
+  font-size: 8px;
+
+  letter-spacing: 0.7px;
+
+  text-transform: uppercase;
+}
+
+.project-mini-text strong {
+  color: #b18aff;
+
+  font-size: 9px;
+}
+
+
+/* =========================
+   HIDE MINI VIEW ON HOVER
+========================= */
+
+.project-progress-card:hover .project-mini {
+  opacity: 0;
+
+  transform: scale(0.8);
+
+  pointer-events: none;
+}
+
+
+/* =========================
+   EXPANDED CONTENT
+========================= */
+
+.project-expanded {
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
+  width: 390px;
+  height: 590px;
+
+  padding: 28px 30px;
+
+  box-sizing: border-box;
+
+  opacity: 0;
+
+  transform: translateY(14px);
+
+  pointer-events: none;
+
+  transition:
+    opacity 0.3s ease 0.08s,
+    transform 0.4s ease 0.08s;
+}
+
+.project-progress-card:hover .project-expanded {
+  opacity: 1;
+
+  transform: translateY(0);
+
+  pointer-events: auto;
+}
+
+
+/* =========================
+   TITLE
+========================= */
+
+.project-expanded::before {
+  content: "FINAL YEAR PROJECT PROGRESS";
+
+  display: block;
+
+  margin-bottom: 18px;
+
+  color: #766f8c;
+
+  font-size: 9px;
+
+  font-weight: 700;
+
+  letter-spacing: 2px;
+}
+
+
+/* =========================
+   BADGE
+========================= */
+
+.project-badge {
+  display: inline-flex;
+
+  align-items: center;
+
+  padding: 7px 12px;
+
+  border-radius: 30px;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(126, 67, 255, 0.13),
+      rgba(161, 104, 255, 0.05)
+    );
+
+  border: 1px solid rgba(145, 85, 255, 0.40);
+
+  color: #bda2ff;
+
+  font-size: 9px;
+
+  font-weight: 700;
+
+  letter-spacing: 1.4px;
+}
+
+
+/* =========================
+   PROJECT NAME
+========================= */
+
+.project-expanded h3 {
+  margin: 18px 0 0;
+
+  color: #ffffff;
+
+  font-size: 24px;
+
+  line-height: 1.15;
+
+  font-weight: 800;
+
+  letter-spacing: -0.5px;
+}
+
+.project-expanded h3 span {
+  display: block;
+
+  margin-top: 4px;
+
+  color: #9b70ff;
+}
+
+
+/* =========================
+   DESCRIPTION
+========================= */
+
+.project-description {
+  margin-top: 15px;
+
+  color: #858397;
+
+  font-size: 12px;
+
+  line-height: 1.65;
+}
+
+
+/* =========================
+   PROGRESS
+========================= */
+
+.progress-header {
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  margin-top: 20px;
+
+  color: #777588;
+
+  font-size: 11px;
+}
+
+.progress-header strong {
+  color: #ffffff;
+
+  font-size: 14px;
+}
+
+.progress-track {
+  width: 100%;
+
+  height: 6px;
+
+  margin-top: 8px;
+
+  overflow: hidden;
+
+  border-radius: 20px;
+
+  background: rgba(255, 255, 255, 0.07);
+}
+
+.progress-fill {
+  width: 10%;
+
+  height: 100%;
+
+  border-radius: inherit;
+
+  background:
+    linear-gradient(
+      90deg,
+      #7138ff,
+      #a66cff,
+      #c29aff
+    );
+
+  box-shadow:
+    0 0 16px rgba(139, 78, 255, 0.7);
+}
+
+
+/* =========================
+   PROJECT INFO
+========================= */
+
+.project-info {
+  display: grid;
+
+  grid-template-columns: 1.5fr 1fr;
+
+  gap: 20px;
+
+  margin-top: 21px;
+}
+
+.info-label {
+  display: block;
+
+  margin-bottom: 6px;
+
+  color: #5f5d70;
+
+  font-size: 8px;
+
+  font-weight: 600;
+
+  letter-spacing: 1.5px;
+}
+
+.project-info strong {
+  color: #eeeeF5;
+
+  font-size: 11px;
+
+  line-height: 1.4;
+}
+
+.status {
+  display: flex;
+
+  align-items: center;
+
+  gap: 6px;
+
+  color: #24d88c !important;
+}
+
+.status i {
+  width: 6px;
+  height: 6px;
+
+  border-radius: 50%;
+
+  background: #24d88c;
+
+  box-shadow:
+    0 0 9px rgba(36, 216, 140, 0.8);
+}
+
+
+/* =========================
+   COMPLETED
+========================= */
+
+.completed-section {
+  margin-top: 19px;
+
+  padding-top: 17px;
+
+  border-top: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.completed-section h4 {
+  margin: 0 0 11px;
+
+  color: #eeeeF5;
+
+  font-size: 12px;
+}
+
+.completed-item {
+  display: flex;
+
+  align-items: center;
+
+  gap: 9px;
+
+  margin-top: 8px;
+
+  color: #858397;
+
+  font-size: 11px;
+}
+
+.completed-item span {
+  width: 23px;
+  height: 23px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  color: #24d88c;
+
+  background: rgba(36, 216, 140, 0.09);
+
+  border: 1px solid rgba(36, 216, 140, 0.12);
+
+  font-size: 10px;
+}
+
+
+/* =========================
+   NEXT MILESTONE
+========================= */
+
+.next-milestone {
+  margin-top: 17px;
+
+  padding: 14px;
+
+  border-radius: 13px;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(115, 60, 255, 0.11),
+      rgba(115, 60, 255, 0.03)
+    );
+
+  border: 1px solid rgba(130, 70, 255, 0.25);
+}
+
+.next-milestone span {
+  display: block;
+
+  margin-bottom: 6px;
+
+  color: #625f73;
+
+  font-size: 8px;
+
+  letter-spacing: 1.4px;
+}
+
+.next-milestone strong {
+  color: #dddded;
+
+  font-size: 11px;
+
+  line-height: 1.4;
+}
+
+
+/* =========================
+   WEEK
+========================= */
+
+.week-progress {
+  margin-top: 8px;
+}
+
+.week-progress > span {
+  color: #5f5c70;
+
+  font-size: 8px;
+
+  letter-spacing: 1.5px;
+}
+
+.week-progress p {
+  margin-top: 4px;
+
+  color: #7f7c90;
+
+  font-size: 10px;
+
+  line-height: 1.5;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 768px) {
+
+  .project-progress-wrapper {
+    left: 18px;
+    bottom: 70px;
+  }
+
+  .project-progress-card:hover {
+    width: 370px;
+    height: 550px;
+  }
+
+  .project-expanded {
+    width: 300px;
+    height: 450px;
+
+    padding: 20px;
+  }
+}

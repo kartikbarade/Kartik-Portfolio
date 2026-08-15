@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
+
 import {
   FaArrowDown,
   FaDownload,
@@ -7,6 +8,7 @@ import {
   FaGithub,
   FaLinkedin,
 } from "react-icons/fa";
+import ProjectProgress from "../ProjectProgress/ProjectProgress";
 import "./Hero.css";
 
 const Hero = () => {
@@ -300,7 +302,9 @@ const Hero = () => {
       <div className="hero-side-text">
         <span>PORTFOLIO • 2026</span>
       </div>
+      <ProjectProgress />
     </section>
+    
   );
 };
 
