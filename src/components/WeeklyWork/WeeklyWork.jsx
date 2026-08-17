@@ -250,7 +250,7 @@ function WeeklyWork({ onClose }) {
 
 
               <div className="week-date">
-                Aug 4 — Aug 9, 2026
+                Aug 3 — Aug 8, 2026
               </div>
 
             </div>
