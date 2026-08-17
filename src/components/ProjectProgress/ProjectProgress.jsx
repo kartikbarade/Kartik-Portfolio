@@ -1,119 +1,319 @@
+import { useEffect, useState } from "react";
+import { FaArrowRight, FaCalendarAlt } from "react-icons/fa";
+
+import WeeklyWork from "../WeeklyWork/WeeklyWork";
+
 import "./ProjectProgress.css";
 
 function ProjectProgress() {
+
+  const [showWeeklyWork, setShowWeeklyWork] = useState(false);
+
+
+  /* =========================================
+     LOCK MAIN PAGE SCROLL
+  ========================================= */
+
+  useEffect(() => {
+
+    if (showWeeklyWork) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+
+    return () => {
+      document.body.style.overflow = "";
+    };
+
+  }, [showWeeklyWork]);
+
+
   return (
-    <div className="project-progress-wrapper">
-      <div className="project-progress-card">
+    <>
+      <div className="project-progress-wrapper">
 
-        {/* COLLAPSED VIEW */}
-        <div className="project-mini">
-          <span className="project-mini-icon">🎓</span>
+        <div className="project-progress-card">
 
-          <div className="project-mini-text">
-            <span>Project</span>
-            <strong>10%</strong>
-          </div>
-        </div>
 
-        {/* EXPANDED VIEW */}
-        <div className="project-expanded">
+          {/* =========================================
+              COLLAPSED VIEW
+          ========================================= */}
 
-          <div className="project-badge">
-            🎓 FINAL YEAR PROJECT
-          </div>
+          <div className="project-mini">
 
-          <h3>
-            Sales & Marketing
-            <span>Agent Development</span>
-          </h3>
+            <span className="project-mini-icon">
+              🎓
+            </span>
 
-          <p className="project-description">
-            AI-powered multi-agent system designed to
-            automate customer interaction, lead
-            qualification and personalized sales &
-            marketing activities.
-          </p>
+            <div className="project-mini-text">
 
-          {/* Progress */}
-          <div className="progress-header">
-            <span>Project Progress</span>
-            <strong>10%</strong>
-          </div>
-
-          <div className="progress-track">
-            <div className="progress-fill"></div>
-          </div>
-
-          {/* Current Phase */}
-          <div className="project-info">
-
-            <div>
-              <span className="info-label">
-                CURRENT PHASE
+              <span>
+                Project
               </span>
 
               <strong>
-                Planning & Specification
+                10%
               </strong>
+
             </div>
 
-            <div>
-              <span className="info-label">
-                STATUS
+          </div>
+
+
+
+          {/* =========================================
+              EXPANDED VIEW
+          ========================================= */}
+
+          <div className="project-expanded">
+
+
+            {/* =========================================
+                HEADER
+            ========================================= */}
+
+            <div className="project-expanded-header">
+
+              <span>
+                FINAL YEAR PROJECT PROGRESS
               </span>
 
-              <strong className="status">
+              <div className="project-active">
                 <i></i>
-                In Progress
-              </strong>
+                ACTIVE
+              </div>
+
             </div>
 
-          </div>
 
-          {/* Completed */}
-          <div className="completed-section">
 
-            <h4>✓ Recently Completed</h4>
+            {/* =========================================
+                BADGE
+            ========================================= */}
 
-            <div className="completed-item">
-              <span>✓</span>
-              Project Synopsis
+            <div className="project-badge">
+
+              🎓 FINAL YEAR PROJECT
+
             </div>
 
-            <div className="completed-item">
-              <span>✓</span>
-              Project Specification
-            </div>
 
-          </div>
 
-          {/* Next milestone */}
-          <div className="next-milestone">
+            {/* =========================================
+                TITLE
+            ========================================= */}
 
-            <span>NEXT MILESTONE</span>
+            <h3>
 
-            <strong>
-              System Architecture & Database Design
-            </strong>
+              Sales &amp; Marketing
 
-          </div>
+              <span>
+                Agent Development
+              </span>
 
-          {/* Week */}
-          <div className="week-progress">
+            </h3>
 
-            <span>WEEK 01</span>
 
-            <p>
-              Project planning, problem definition,
-              synopsis and specification completed.
+
+            {/* =========================================
+                DESCRIPTION
+            ========================================= */}
+
+            <p className="project-description">
+
+              AI-powered multi-agent system designed to
+              automate customer interaction, lead
+              qualification and personalized sales &
+              marketing activities.
+
             </p>
+
+
+
+            {/* =========================================
+                PROGRESS
+            ========================================= */}
+
+            <div className="progress-header">
+
+              <span>
+                Project Progress
+              </span>
+
+              <strong>
+                10%
+              </strong>
+
+            </div>
+
+
+            <div className="progress-track">
+
+              <div className="progress-fill"></div>
+
+            </div>
+
+
+
+            {/* =========================================
+                CURRENT PHASE
+            ========================================= */}
+
+            <div className="project-info">
+
+
+              <div>
+
+                <span className="info-label">
+                  CURRENT PHASE
+                </span>
+
+                <strong>
+                  Planning &amp; Specification
+                </strong>
+
+              </div>
+
+
+
+              <div>
+
+                <span className="info-label">
+                  STATUS
+                </span>
+
+                <strong className="status">
+
+                  <i></i>
+
+                  In Progress
+
+                </strong>
+
+              </div>
+
+
+            </div>
+
+
+
+            {/* =========================================
+                COMPLETED
+            ========================================= */}
+
+            <div className="completed-section">
+
+              <h4>
+                ✓ Recently Completed
+              </h4>
+
+
+              <div className="completed-item">
+
+                <span>
+                  ✓
+                </span>
+
+                Project Synopsis
+
+              </div>
+
+
+              <div className="completed-item">
+
+                <span>
+                  ✓
+                </span>
+
+                Project Specification
+
+              </div>
+
+            </div>
+
+
+
+            {/* =========================================
+                NEXT MILESTONE
+            ========================================= */}
+
+            <div className="next-milestone">
+
+              <span>
+                NEXT MILESTONE
+              </span>
+
+              <strong>
+                System Architecture &amp; Working flow
+              </strong>
+
+            </div>
+
+
+
+            {/* =========================================
+                WEEK
+            ========================================= */}
+
+            <div className="week-progress">
+
+              <span>
+                WEEK 01
+              </span>
+
+              <p>
+                Project planning, problem definition,
+                synopsis and specification completed.
+              </p>
+
+            </div>
+
+
+
+            {/* =========================================
+                VIEW WEEKLY WORK BUTTON
+            ========================================= */}
+
+            <button
+              className="weekly-work-button"
+              onClick={() => setShowWeeklyWork(true)}
+            >
+
+              <div className="weekly-button-icon">
+                <FaCalendarAlt />
+              </div>
+
+              <span>
+                View Weekly Work
+              </span>
+
+              <FaArrowRight className="weekly-button-arrow" />
+
+            </button>
+
 
           </div>
 
         </div>
 
       </div>
-    </div>
+
+
+
+      {/* =========================================
+          WEEKLY WORK FULL SCREEN PAGE
+      ========================================= */}
+
+      {showWeeklyWork && (
+
+        <WeeklyWork
+          onClose={() => setShowWeeklyWork(false)}
+        />
+
+      )}
+
+    </>
   );
 }
 

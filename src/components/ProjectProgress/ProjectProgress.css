@@ -1,13 +1,20 @@
+/* =========================================================
+   PROJECT PROGRESS
+========================================================= */
+
 .project-progress-wrapper {
   position: absolute;
+
   left: 32px;
   bottom: 90px;
+
   z-index: 50;
 }
 
-/* =========================
+
+/* =========================================================
    MAIN CARD
-========================= */
+========================================================= */
 
 .project-progress-card {
   position: relative;
@@ -18,6 +25,7 @@
   overflow: hidden;
 
   border: 1px solid rgba(157, 104, 255, 0.35);
+
   border-radius: 20px;
 
   background:
@@ -41,7 +49,10 @@
     box-shadow 0.4s ease;
 }
 
-/* subtle glow */
+
+/* =========================================================
+   GLOW
+========================================================= */
 
 .project-progress-card::before {
   content: "";
@@ -62,9 +73,9 @@
 }
 
 
-/* =========================
+/* =========================================================
    HOVER
-========================= */
+========================================================= */
 
 .project-progress-card:hover {
   width: 390px;
@@ -78,9 +89,9 @@
 }
 
 
-/* =========================
+/* =========================================================
    MINI CARD
-========================= */
+========================================================= */
 
 .project-mini {
   position: absolute;
@@ -103,6 +114,11 @@
     opacity 0.2s ease,
     transform 0.3s ease;
 }
+
+
+/* =========================================================
+   MINI ICON
+========================================================= */
 
 .project-mini-icon {
   width: 34px;
@@ -134,9 +150,9 @@
 }
 
 
-/* =========================
+/* =========================================================
    MINI TEXT
-========================= */
+========================================================= */
 
 .project-mini-text {
   display: flex;
@@ -161,9 +177,9 @@
 }
 
 
-/* =========================
-   HIDE MINI VIEW ON HOVER
-========================= */
+/* =========================================================
+   HIDE MINI
+========================================================= */
 
 .project-progress-card:hover .project-mini {
   opacity: 0;
@@ -174,9 +190,9 @@
 }
 
 
-/* =========================
+/* =========================================================
    EXPANDED CONTENT
-========================= */
+========================================================= */
 
 .project-expanded {
   position: absolute;
@@ -187,9 +203,13 @@
   width: 390px;
   height: 590px;
 
-  padding: 28px 30px;
+  padding: 28px 30px 30px;
 
   box-sizing: border-box;
+
+  overflow-y: auto;
+
+  overflow-x: hidden;
 
   opacity: 0;
 
@@ -197,10 +217,54 @@
 
   pointer-events: none;
 
+  scrollbar-width: thin;
+
+  scrollbar-color:
+    rgba(139, 78, 255, 0.8)
+    transparent;
+
   transition:
     opacity 0.3s ease 0.08s,
     transform 0.4s ease 0.08s;
 }
+
+
+/* =========================================================
+   CUSTOM SCROLLBAR
+========================================================= */
+
+.project-expanded::-webkit-scrollbar {
+  width: 5px;
+}
+
+.project-expanded::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.project-expanded::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+
+  background:
+    linear-gradient(
+      180deg,
+      #7138ff,
+      #a66cff
+    );
+}
+
+.project-expanded::-webkit-scrollbar-thumb:hover {
+  background:
+    linear-gradient(
+      180deg,
+      #8b4cff,
+      #c29aff
+    );
+}
+
+
+/* =========================================================
+   SHOW EXPANDED
+========================================================= */
 
 .project-progress-card:hover .project-expanded {
   opacity: 1;
@@ -211,17 +275,23 @@
 }
 
 
-/* =========================
-   TITLE
-========================= */
+/* =========================================================
+   EXPANDED HEADER
+========================================================= */
 
-.project-expanded::before {
-  content: "FINAL YEAR PROJECT PROGRESS";
+.project-expanded-header {
+  display: flex;
 
-  display: block;
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 15px;
 
   margin-bottom: 18px;
+}
 
+.project-expanded-header > span {
   color: #766f8c;
 
   font-size: 9px;
@@ -229,12 +299,57 @@
   font-weight: 700;
 
   letter-spacing: 2px;
+
+  white-space: nowrap;
 }
 
 
-/* =========================
+/* =========================================================
+   ACTIVE
+========================================================= */
+
+.project-active {
+  display: flex;
+
+  align-items: center;
+
+  gap: 6px;
+
+  padding: 6px 10px;
+
+  border-radius: 30px;
+
+  border: 1px solid rgba(36, 216, 140, 0.25);
+
+  background: rgba(36, 216, 140, 0.05);
+
+  color: #24d88c;
+
+  font-size: 8px;
+
+  font-weight: 800;
+
+  letter-spacing: 1px;
+
+  flex-shrink: 0;
+}
+
+.project-active i {
+  width: 6px;
+  height: 6px;
+
+  border-radius: 50%;
+
+  background: #24d88c;
+
+  box-shadow:
+    0 0 10px rgba(36, 216, 140, 0.8);
+}
+
+
+/* =========================================================
    BADGE
-========================= */
+========================================================= */
 
 .project-badge {
   display: inline-flex;
@@ -264,9 +379,9 @@
 }
 
 
-/* =========================
-   PROJECT NAME
-========================= */
+/* =========================================================
+   TITLE
+========================================================= */
 
 .project-expanded h3 {
   margin: 18px 0 0;
@@ -291,9 +406,9 @@
 }
 
 
-/* =========================
+/* =========================================================
    DESCRIPTION
-========================= */
+========================================================= */
 
 .project-description {
   margin-top: 15px;
@@ -306,9 +421,9 @@
 }
 
 
-/* =========================
+/* =========================================================
    PROGRESS
-========================= */
+========================================================= */
 
 .progress-header {
   display: flex;
@@ -330,6 +445,9 @@
   font-size: 14px;
 }
 
+
+/* Track */
+
 .progress-track {
   width: 100%;
 
@@ -343,6 +461,9 @@
 
   background: rgba(255, 255, 255, 0.07);
 }
+
+
+/* Fill */
 
 .progress-fill {
   width: 10%;
@@ -364,9 +485,9 @@
 }
 
 
-/* =========================
+/* =========================================================
    PROJECT INFO
-========================= */
+========================================================= */
 
 .project-info {
   display: grid;
@@ -400,6 +521,9 @@
   line-height: 1.4;
 }
 
+
+/* Status */
+
 .status {
   display: flex;
 
@@ -423,9 +547,9 @@
 }
 
 
-/* =========================
+/* =========================================================
    COMPLETED
-========================= */
+========================================================= */
 
 .completed-section {
   margin-top: 19px;
@@ -478,9 +602,9 @@
 }
 
 
-/* =========================
+/* =========================================================
    NEXT MILESTONE
-========================= */
+========================================================= */
 
 .next-milestone {
   margin-top: 17px;
@@ -520,9 +644,9 @@
 }
 
 
-/* =========================
+/* =========================================================
    WEEK
-========================= */
+========================================================= */
 
 .week-progress {
   margin-top: 8px;
@@ -547,26 +671,167 @@
 }
 
 
-/* =========================
+/* =========================================================
+   WEEKLY WORK BUTTON
+========================================================= */
+
+.weekly-work-button {
+  width: 100%;
+
+  min-height: 44px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  margin-top: 17px;
+
+  padding: 0 13px;
+
+  border: 1px solid rgba(169, 108, 255, 0.40);
+
+  border-radius: 12px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #6430dc,
+      #8b4cff
+    );
+
+  color: #ffffff;
+
+  font-family: inherit;
+
+  font-size: 10px;
+
+  font-weight: 800;
+
+  letter-spacing: 0.3px;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 10px 25px rgba(111, 52, 230, 0.25);
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    filter 0.25s ease;
+}
+
+
+/* Hover */
+
+.weekly-work-button:hover {
+  transform: translateY(-2px);
+
+  filter: brightness(1.08);
+
+  box-shadow:
+    0 14px 35px rgba(111, 52, 230, 0.40);
+}
+
+
+/* Icon */
+
+.weekly-button-icon {
+  width: 25px;
+  height: 25px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 7px;
+
+  background: rgba(255, 255, 255, 0.13);
+}
+
+
+/* Text */
+
+.weekly-work-button span {
+  flex: 1;
+
+  text-align: left;
+}
+
+
+/* Arrow */
+
+.weekly-button-arrow {
+  font-size: 10px;
+
+  transition:
+    transform 0.25s ease;
+}
+
+.weekly-work-button:hover .weekly-button-arrow {
+  transform: translateX(4px);
+}
+
+
+/* =========================================================
    MOBILE
-========================= */
+========================================================= */
 
 @media (max-width: 768px) {
 
   .project-progress-wrapper {
     left: 18px;
+
     bottom: 70px;
   }
 
   .project-progress-card:hover {
     width: 370px;
+
     height: 550px;
   }
 
   .project-expanded {
-    width: 300px;
-    height: 450px;
+    width: 370px;
+
+    height: 550px;
 
     padding: 20px;
   }
+
+}
+
+
+@media (max-width: 520px) {
+
+  .project-progress-card:hover {
+    width: calc(100vw - 30px);
+
+    height: 550px;
+  }
+
+  .project-expanded {
+    width: 100%;
+
+    height: 550px;
+
+    padding: 20px;
+  }
+
+  .project-expanded-header {
+    align-items: flex-start;
+  }
+
+  .project-expanded-header > span {
+    white-space: normal;
+  }
+
+  .project-info {
+    grid-template-columns: 1fr;
+
+    gap: 15px;
+  }
+
 }
