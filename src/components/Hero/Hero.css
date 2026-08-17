@@ -692,6 +692,8 @@
 }
 
 
+
+
 @media (max-width: 900px) {
 
   .floating-tech {
@@ -722,14 +724,8 @@
     padding: 90px 0;
   }
 
-  .robot-3d-container {
-    width: 220px;
-    height: 300px;
-
-    right: -45px;
-    top: 35%;
-
-    opacity: 0.35;
+   .robot-3d-container {
+    display: none !important;
   }
 
   .availability-badge {
