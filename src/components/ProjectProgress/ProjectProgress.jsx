@@ -53,7 +53,7 @@ function ProjectProgress() {
               </span>
 
               <strong>
-                10%
+                12%
               </strong>
 
             </div>
@@ -142,7 +142,7 @@ function ProjectProgress() {
               </span>
 
               <strong>
-                10%
+                12%
               </strong>
 
             </div>
@@ -170,7 +170,7 @@ function ProjectProgress() {
                 </span>
 
                 <strong>
-                  Planning &amp; Specification
+                  Project Review &amp; System Architecture
                 </strong>
 
               </div>
@@ -187,7 +187,7 @@ function ProjectProgress() {
 
                   <i></i>
 
-                  In Progress
+                  Completed
 
                 </strong>
 
@@ -215,7 +215,7 @@ function ProjectProgress() {
                   ✓
                 </span>
 
-                Project Synopsis
+                Project Review
 
               </div>
 
@@ -226,7 +226,7 @@ function ProjectProgress() {
                   ✓
                 </span>
 
-                Project Specification
+                Project System architecture
 
               </div>
 
@@ -245,7 +245,7 @@ function ProjectProgress() {
               </span>
 
               <strong>
-                System Architecture &amp; Working flow
+                ... ; 
               </strong>
 
             </div>
@@ -259,12 +259,12 @@ function ProjectProgress() {
             <div className="week-progress">
 
               <span>
-                WEEK 01
+                WEEK 02
               </span>
 
               <p>
-                Project planning, problem definition,
-                synopsis and specification completed.
+                Project Review,
+                System architecture are done.
               </p>
 
             </div>

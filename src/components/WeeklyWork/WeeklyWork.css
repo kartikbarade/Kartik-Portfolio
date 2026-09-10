@@ -1,6 +1,6 @@
 /* =========================================================
    WEEKLY WORK
-   PREMIUM FULL SCREEN JOURNAL
+   ORIGINAL UI + WEEK 02 SUPPORT
 ========================================================= */
 
 
@@ -68,6 +68,7 @@
   z-index: 100000;
 
   width: min(1120px, 94vw);
+
   height: min(760px, 90vh);
 
   display: flex;
@@ -105,19 +106,23 @@
 @keyframes weeklyPanelIn {
 
   from {
+
     opacity: 0;
 
     transform:
       translateY(20px)
       scale(0.97);
+
   }
 
   to {
+
     opacity: 1;
 
     transform:
       translateY(0)
       scale(1);
+
   }
 
 }
@@ -144,8 +149,6 @@
 }
 
 
-/* Left */
-
 .weekly-header-left {
   display: flex;
 
@@ -154,8 +157,6 @@
   gap: 13px;
 }
 
-
-/* Header icon */
 
 .weekly-header-icon {
   width: 40px;
@@ -183,8 +184,6 @@
 }
 
 
-/* Title */
-
 .weekly-work-header h2 {
   margin: 0;
 
@@ -198,8 +197,6 @@
 }
 
 
-/* Subtitle */
-
 .weekly-work-header p {
   margin: 4px 0 0;
 
@@ -210,7 +207,7 @@
 
 
 /* =========================================================
-   CLOSE
+   CLOSE BUTTON
 ========================================================= */
 
 .weekly-close-button {
@@ -240,11 +237,14 @@
     transform 0.25s ease;
 }
 
+
 .weekly-close-button:hover {
+
   background:
     rgba(126, 67, 255, 0.18);
 
   transform: rotate(90deg);
+
 }
 
 
@@ -253,13 +253,16 @@
 ========================================================= */
 
 .weekly-work-body {
+
   min-height: 0;
 
   flex: 1;
 
   display: grid;
 
-  grid-template-columns: 190px 1fr;
+  grid-template-columns:
+    190px
+    1fr;
 }
 
 
@@ -268,20 +271,30 @@
 ========================================================= */
 
 .weekly-timeline {
+
   position: relative;
 
   padding: 22px 15px;
 
   overflow-y: auto;
 
-  border-right: 1px solid rgba(255, 255, 255, 0.07);
+  border-right:
+    1px solid
+    rgba(255, 255, 255, 0.07);
 
   background:
     rgba(8, 8, 17, 0.30);
+
+  scrollbar-width: thin;
+
+  scrollbar-color:
+    rgba(139, 78, 255, 0.75)
+    transparent;
 }
 
 
 .timeline-title {
+
   margin: 0 8px 18px;
 
   color: #625e73;
@@ -294,15 +307,16 @@
 }
 
 
-/* Timeline line */
-
 .weekly-timeline::before {
+
   content: "";
 
   position: absolute;
 
   left: 35px;
+
   top: 65px;
+
   bottom: 30px;
 
   width: 1px;
@@ -313,15 +327,22 @@
       rgba(139, 78, 255, 0.65),
       rgba(255, 255, 255, 0.05)
     );
+
+  pointer-events: none;
 }
 
 
-/* Item */
+/* =========================================================
+   TIMELINE ITEM
+========================================================= */
 
 .timeline-item {
+
   position: relative;
 
   z-index: 2;
+
+  width: 100%;
 
   display: flex;
 
@@ -333,15 +354,44 @@
 
   padding: 12px 8px;
 
-  border: 1px solid transparent;
+  border:
+    1px solid
+    transparent;
 
   border-radius: 12px;
 
-  transition: 0.2s ease;
+  background: transparent;
+
+  color: inherit;
+
+  text-align: left;
+
+  font-family: inherit;
+
+  outline: none;
+
+  cursor: default;
+}
+
+
+.timeline-item.completed {
+
+  cursor: pointer;
+
+}
+
+
+.timeline-item.upcoming {
+
+  cursor: default;
+
+  opacity: 0.55;
+
 }
 
 
 .timeline-item.active {
+
   border-color:
     rgba(139, 78, 255, 0.35);
 
@@ -349,13 +399,25 @@
     rgba(126, 67, 255, 0.09);
 
   box-shadow:
-    inset 0 0 20px rgba(126, 67, 255, 0.04);
+    inset 0 0 20px
+    rgba(126, 67, 255, 0.04);
 }
 
 
-/* Marker */
+.timeline-item.completed:hover {
+
+  background:
+    rgba(126, 67, 255, 0.05);
+
+}
+
+
+/* =========================================================
+   MARKER
+========================================================= */
 
 .timeline-marker {
+
   width: 25px;
   height: 25px;
 
@@ -373,26 +435,33 @@
   background:
     #0b0b16;
 
-  border: 1px solid rgba(130, 122, 153, 0.45);
+  border:
+    1px solid
+    rgba(130, 122, 153, 0.45);
 
   font-size: 10px;
 }
 
 
-.timeline-item.active .timeline-marker {
+.timeline-item.completed .timeline-marker {
+
   color: #24d88c;
 
   border-color:
     rgba(36, 216, 140, 0.50);
 
   box-shadow:
-    0 0 14px rgba(36, 216, 140, 0.12);
+    0 0 14px
+    rgba(36, 216, 140, 0.12);
 }
 
 
-/* Text */
+/* =========================================================
+   TIMELINE TEXT
+========================================================= */
 
 .timeline-text {
+
   display: flex;
 
   flex-direction: column;
@@ -400,19 +469,26 @@
   gap: 3px;
 }
 
+
 .timeline-text strong {
+
   color: #ddd9e8;
 
   font-size: 10px;
 }
 
+
 .timeline-text span {
+
   color: #666276;
 
   font-size: 8px;
 }
 
-.timeline-item.active .timeline-text span {
+
+.timeline-item.completed
+.timeline-text span {
+
   color: #24d88c;
 }
 
@@ -422,6 +498,7 @@
 ========================================================= */
 
 .weekly-content {
+
   min-width: 0;
 
   padding: 25px 27px;
@@ -436,17 +513,22 @@
 }
 
 
-/* Scrollbar */
-
 .weekly-content::-webkit-scrollbar {
+
   width: 5px;
+
 }
+
 
 .weekly-content::-webkit-scrollbar-track {
+
   background: transparent;
+
 }
 
+
 .weekly-content::-webkit-scrollbar-thumb {
+
   border-radius: 10px;
 
   background:
@@ -455,6 +537,20 @@
       #7138ff,
       #a66cff
     );
+
+}
+
+
+/* =========================================================
+   WEEK PAGE
+========================================================= */
+
+.week-page {
+
+  width: 100%;
+
+  min-width: 0;
+
 }
 
 
@@ -463,9 +559,11 @@
 ========================================================= */
 
 .week-content-header {
+
   display: flex;
 
   align-items: flex-start;
+
   justify-content: space-between;
 
   gap: 20px;
@@ -473,6 +571,7 @@
 
 
 .week-heading-row {
+
   display: flex;
 
   align-items: center;
@@ -482,6 +581,7 @@
 
 
 .week-content-header h1 {
+
   margin: 0;
 
   color: #ffffff;
@@ -493,6 +593,13 @@
 
 
 .week-completed {
+
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 4px;
+
   padding: 5px 9px;
 
   border-radius: 20px;
@@ -500,7 +607,8 @@
   background:
     rgba(36, 216, 140, 0.08);
 
-  border: 1px solid
+  border:
+    1px solid
     rgba(36, 216, 140, 0.18);
 
   color: #24d88c;
@@ -512,6 +620,7 @@
 
 
 .week-content-header p {
+
   max-width: 570px;
 
   margin: 7px 0 0;
@@ -525,6 +634,7 @@
 
 
 .week-date {
+
   padding-top: 5px;
 
   color: #777487;
@@ -540,6 +650,7 @@
 ========================================================= */
 
 .weekly-stats {
+
   display: grid;
 
   grid-template-columns:
@@ -552,6 +663,7 @@
 
 
 .weekly-stat-card {
+
   min-width: 0;
 
   display: flex;
@@ -562,7 +674,9 @@
 
   padding: 13px;
 
-  border: 1px solid rgba(255, 255, 255, 0.06);
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.06);
 
   border-radius: 13px;
 
@@ -576,6 +690,7 @@
 
 
 .stat-icon {
+
   width: 31px;
   height: 31px;
 
@@ -593,31 +708,43 @@
 
 
 .stat-icon.green {
+
   color: #24d88c;
 
-  background: rgba(36, 216, 140, 0.08);
+  background:
+    rgba(36, 216, 140, 0.08);
 }
+
 
 .stat-icon.blue {
+
   color: #3d9cff;
 
-  background: rgba(61, 156, 255, 0.08);
+  background:
+    rgba(61, 156, 255, 0.08);
 }
+
 
 .stat-icon.purple {
+
   color: #a66cff;
 
-  background: rgba(166, 108, 255, 0.08);
+  background:
+    rgba(166, 108, 255, 0.08);
 }
 
+
 .stat-icon.pink {
+
   color: #d18cff;
 
-  background: rgba(209, 140, 255, 0.08);
+  background:
+    rgba(209, 140, 255, 0.08);
 }
 
 
 .weekly-stat-card span {
+
   display: block;
 
   color: #656074;
@@ -631,6 +758,7 @@
 
 
 .weekly-stat-card strong {
+
   display: block;
 
   margin-top: 3px;
@@ -642,6 +770,7 @@
 
 
 .weekly-stat-card small {
+
   display: block;
 
   margin-top: 2px;
@@ -657,6 +786,7 @@
 ========================================================= */
 
 .weekly-columns {
+
   display: grid;
 
   grid-template-columns:
@@ -671,11 +801,14 @@
 
 
 .weekly-section {
+
   min-width: 0;
+
 }
 
 
 .weekly-section h3 {
+
   margin: 0 0 12px;
 
   color: #e8e5f0;
@@ -691,6 +824,7 @@
 ========================================================= */
 
 .work-check-item {
+
   display: flex;
 
   align-items: center;
@@ -706,6 +840,7 @@
 
 
 .work-check-item svg {
+
   flex-shrink: 0;
 
   color: #24d88c;
@@ -719,26 +854,49 @@
 ========================================================= */
 
 .file-card {
+
   display: flex;
 
   align-items: center;
+
   text-decoration: none;
+
   gap: 9px;
 
   margin-bottom: 8px;
 
   padding: 9px;
 
-  border: 1px solid rgba(255, 255, 255, 0.06);
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.06);
 
   border-radius: 10px;
 
   background:
     rgba(255, 255, 255, 0.025);
+
+  cursor: pointer;
+
+  transition:
+    border-color 0.2s ease,
+    background 0.2s ease;
+}
+
+
+.file-card:hover {
+
+  border-color:
+    rgba(166, 108, 255, 0.24);
+
+  background:
+    rgba(126, 67, 255, 0.05);
+
 }
 
 
 .file-icon {
+
   width: 27px;
   height: 27px;
 
@@ -756,6 +914,7 @@
 
 
 .file-icon.pdf {
+
   color: #ff6b6b;
 
   background:
@@ -763,15 +922,21 @@
 }
 
 
-.file-icon.code {
-  color: #a66cff;
+.file-icon.ppt {
+
+  color: #ff6b6b;
 
   background:
-    rgba(166, 108, 255, 0.08);
+    rgba(255, 107, 107, 0.08);
+
+  border:
+    1px solid
+    rgba(255, 107, 107, 0.10);
 }
 
 
-.file-card div:nth-child(2) {
+.file-information {
+
   min-width: 0;
 
   flex: 1;
@@ -785,6 +950,7 @@
 
 
 .file-card strong {
+
   overflow: hidden;
 
   color: #d9d5e4;
@@ -798,13 +964,17 @@
 
 
 .file-card span {
+
   color: #5f5b6e;
 
   font-size: 7px;
 }
 
 
-.file-card > svg:last-child {
+.file-download-icon {
+
+  flex-shrink: 0;
+
   color: #8c8799;
 
   font-size: 9px;
@@ -816,6 +986,7 @@
 ========================================================= */
 
 .image-preview {
+
   width: 100%;
 
   height: 135px;
@@ -824,7 +995,9 @@
 
   border-radius: 11px;
 
-  border: 1px solid rgba(255, 255, 255, 0.07);
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.07);
 
   background:
     rgba(255, 255, 255, 0.025);
@@ -832,6 +1005,7 @@
 
 
 .image-placeholder {
+
   width: 100%;
   height: 100%;
 
@@ -856,6 +1030,7 @@
 
 
 .image-placeholder svg {
+
   color: #a66cff;
 
   font-size: 25px;
@@ -863,7 +1038,408 @@
 
 
 .image-placeholder span {
+
   font-size: 8px;
+}
+
+
+/* =========================================================
+   WEEK 02 - PROJECT REVIEW
+========================================================= */
+
+.review-card {
+
+  width: 100%;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 9px;
+
+  padding: 11px;
+
+  box-sizing: border-box;
+
+  border:
+    1px solid
+    rgba(36, 216, 140, 0.13);
+
+  border-radius: 10px;
+
+  background:
+    rgba(36, 216, 140, 0.035);
+}
+
+
+.review-icon {
+
+  width: 31px;
+  height: 31px;
+
+  flex-shrink: 0;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 8px;
+
+  color: #24d88c;
+
+  background:
+    rgba(36, 216, 140, 0.08);
+
+  font-size: 11px;
+}
+
+
+.review-main {
+
+  min-width: 0;
+
+  flex: 1;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 3px;
+}
+
+
+.review-main strong {
+
+  overflow: hidden;
+
+  color: #e7e3ed;
+
+  font-size: 8px;
+
+  white-space: nowrap;
+
+  text-overflow: ellipsis;
+}
+
+
+.review-main span {
+
+  overflow: hidden;
+
+  color: #777487;
+
+  font-size: 7px;
+
+  white-space: nowrap;
+
+  text-overflow: ellipsis;
+}
+
+
+.review-status {
+
+  flex-shrink: 0;
+
+  color: #24d88c;
+
+  font-size: 14px;
+
+  font-weight: 800;
+}
+
+
+.review-details {
+
+  display: grid;
+
+  grid-template-columns:
+    1fr
+    1fr;
+
+  gap: 7px;
+
+  margin-top: 8px;
+}
+
+
+.review-details > div {
+
+  min-width: 0;
+
+  padding: 9px;
+
+  box-sizing: border-box;
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.045);
+
+  border-radius: 8px;
+
+  background:
+    rgba(255, 255, 255, 0.018);
+}
+
+
+.review-details span {
+
+  display: block;
+
+  color: #5f5b6e;
+
+  font-size: 6px;
+
+  letter-spacing: 0.7px;
+}
+
+
+.review-details strong {
+
+  display: block;
+
+  margin-top: 4px;
+
+  color: #ddd9e8;
+
+  font-size: 7px;
+}
+
+
+.green-text {
+
+  color: #24d88c !important;
+
+}
+
+
+/* =========================================================
+   WEEK 02 - ARCHITECTURE
+========================================================= */
+
+.architecture-full-section {
+
+  width: 100%;
+
+  min-width: 0;
+
+  margin-top: 22px;
+
+  padding: 14px;
+
+  box-sizing: border-box;
+
+  border:
+    1px solid
+    rgba(126, 67, 255, 0.20);
+
+  border-radius: 13px;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(126, 67, 255, 0.055),
+      rgba(126, 67, 255, 0.018)
+    );
+}
+
+
+.architecture-heading {
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 9px;
+
+  margin-bottom: 11px;
+}
+
+
+.architecture-heading-icon {
+
+  width: 30px;
+  height: 30px;
+
+  flex-shrink: 0;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 8px;
+
+  color: #a66cff;
+
+  background:
+    rgba(166, 108, 255, 0.08);
+
+  font-size: 10px;
+}
+
+
+.architecture-heading h3 {
+
+  margin: 0;
+
+  color: #e8e5f0;
+
+  font-size: 10px;
+
+  font-weight: 800;
+}
+
+
+.architecture-heading p {
+
+  margin: 3px 0 0;
+
+  color: #6d687c;
+
+  font-size: 6px;
+
+  line-height: 1.4;
+}
+
+
+/* =========================================================
+   ARCHITECTURE IMAGE
+========================================================= */
+
+.architecture-image-container {
+
+  position: relative;
+
+  width: 100%;
+
+  min-height: 250px;
+
+  max-height: 440px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  overflow: hidden;
+
+  padding: 8px;
+
+  box-sizing: border-box;
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.045);
+
+  border-radius: 9px;
+
+  background:
+    #080811;
+}
+
+
+.architecture-image-container img {
+
+  display: block;
+
+  width: 100%;
+
+  height: auto;
+
+  max-width: 100%;
+
+  max-height: 420px;
+
+  object-fit: contain;
+}
+
+
+/* =========================================================
+   ARCHITECTURE ERROR
+========================================================= */
+
+.architecture-image-error {
+
+  display: none;
+
+  position: absolute;
+
+  inset: 0;
+
+  align-items: center;
+
+  justify-content: center;
+
+  flex-direction: column;
+
+  gap: 7px;
+
+  color: #706a80;
+
+  text-align: center;
+}
+
+
+.architecture-image-error svg {
+
+  color: #a66cff;
+
+  font-size: 25px;
+}
+
+
+.architecture-image-error span {
+
+  font-size: 8px;
+}
+
+
+.architecture-image-error small {
+
+  font-size: 6px;
+
+  color: #504b5c;
+}
+
+
+.architecture-image-container.image-load-error
+.architecture-image-error {
+
+  display: flex;
+}
+
+
+/* =========================================================
+   WEEK 02 PPT
+========================================================= */
+
+.week02-ppt-wrapper {
+
+  width: 100%;
+
+  min-width: 0;
+
+  margin-top: 14px;
+}
+
+
+.week02-ppt-wrapper h4 {
+
+  margin: 0 0 8px;
+
+  color: #e8e5f0;
+
+  font-size: 8px;
+
+  font-weight: 800;
+}
+
+
+.week02-ppt-wrapper .file-card {
+
+  margin-bottom: 0;
 }
 
 
@@ -872,6 +1448,7 @@
 ========================================================= */
 
 .weekly-note {
+
   display: flex;
 
   align-items: flex-start;
@@ -882,7 +1459,9 @@
 
   padding: 14px;
 
-  border: 1px solid rgba(126, 67, 255, 0.20);
+  border:
+    1px solid
+    rgba(126, 67, 255, 0.20);
 
   border-radius: 13px;
 
@@ -896,6 +1475,7 @@
 
 
 .note-icon {
+
   width: 28px;
   height: 28px;
 
@@ -918,6 +1498,7 @@
 
 
 .weekly-note strong {
+
   color: #ddd9e8;
 
   font-size: 10px;
@@ -925,6 +1506,7 @@
 
 
 .weekly-note p {
+
   margin: 5px 0 0;
 
   color: #777487;
@@ -935,52 +1517,183 @@
 }
 
 
+.week02-note {
+
+  border-color:
+    rgba(36, 216, 140, 0.14);
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(36, 216, 140, 0.045),
+      rgba(36, 216, 140, 0.012)
+    );
+}
+
+
 /* =========================================================
-   RESPONSIVE
+   UPCOMING WEEK
+========================================================= */
+
+.upcoming-week {
+
+  min-height: 480px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  padding: 30px;
+
+  box-sizing: border-box;
+
+  text-align: center;
+}
+
+
+.upcoming-icon {
+
+  width: 52px;
+  height: 52px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  color: #706a80;
+
+  background:
+    rgba(126, 67, 255, 0.05);
+
+  border:
+    1px solid
+    rgba(126, 67, 255, 0.1);
+
+  font-size: 11px;
+}
+
+
+.upcoming-week h1 {
+
+  margin: 17px 0 7px;
+
+  color: #ffffff;
+
+  font-size: 23px;
+}
+
+
+.upcoming-week > span {
+
+  padding: 5px 9px;
+
+  border-radius: 20px;
+
+  color: #706a80;
+
+  background:
+    rgba(255, 255, 255, 0.03);
+
+  font-size: 7px;
+
+  font-weight: 700;
+}
+
+
+.upcoming-week p {
+
+  max-width: 340px;
+
+  margin-top: 13px;
+
+  color: #666276;
+
+  font-size: 8px;
+
+  line-height: 1.6;
+}
+
+
+/* =========================================================
+   TABLET
 ========================================================= */
 
 @media (max-width: 900px) {
 
   .weekly-work-panel {
+
     width: 96vw;
 
     height: 92vh;
+
   }
 
   .weekly-work-body {
-    grid-template-columns: 150px 1fr;
+
+    grid-template-columns:
+      150px
+      1fr;
+
   }
 
   .weekly-columns {
-    grid-template-columns: 1fr 1fr;
+
+    grid-template-columns:
+      1fr
+      1fr;
+
   }
 
   .weekly-section:last-child {
-    grid-column: 1 / -1;
+
+    grid-column:
+      1 / -1;
+
   }
 
 }
 
 
+/* =========================================================
+   MOBILE
+========================================================= */
+
 @media (max-width: 650px) {
 
   .weekly-work-overlay {
+
     padding: 10px;
+
   }
 
+
   .weekly-work-panel {
+
     width: 100%;
 
     height: 94vh;
 
     border-radius: 18px;
+
   }
+
 
   .weekly-work-body {
+
     grid-template-columns: 1fr;
+
   }
 
+
   .weekly-timeline {
+
     display: flex;
 
     gap: 5px;
@@ -988,71 +1701,173 @@
     padding: 10px;
 
     overflow-x: auto;
+
     overflow-y: hidden;
 
     border-right: none;
 
-    border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+    border-bottom:
+      1px solid
+      rgba(255, 255, 255, 0.07);
+
   }
+
 
   .timeline-title {
+
     display: none;
+
   }
+
 
   .weekly-timeline::before {
+
     display: none;
+
   }
 
+
   .timeline-item {
+
     min-width: 100px;
 
     margin: 0;
+
   }
+
 
   .weekly-content {
+
     padding: 18px;
+
   }
+
 
   .weekly-stats {
+
     grid-template-columns:
       repeat(2, minmax(0, 1fr));
+
   }
+
 
   .weekly-columns {
+
     grid-template-columns: 1fr;
+
   }
+
 
   .weekly-section:last-child {
+
     grid-column: auto;
+
   }
+
 
   .week-content-header {
+
     flex-direction: column;
+
   }
 
+
   .week-date {
+
     padding: 0;
+
+  }
+
+
+  .architecture-image-container {
+
+    min-height: 180px;
+
+    max-height: 340px;
+
   }
 
 }
 
 
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
 @media (max-width: 400px) {
 
   .weekly-stats {
+
     grid-template-columns: 1fr;
+
   }
+
 
   .weekly-work-header {
+
     padding: 14px;
+
   }
+
 
   .weekly-work-header h2 {
+
     font-size: 13px;
+
   }
 
+
   .weekly-work-header p {
+
     font-size: 8px;
+
+  }
+
+
+  .weekly-header-icon {
+
+    width: 34px;
+
+    height: 34px;
+
+    font-size: 12px;
+
+  }
+
+
+  .weekly-close-button {
+
+    width: 31px;
+
+    height: 31px;
+
+    font-size: 11px;
+
+  }
+
+
+  .weekly-content {
+
+    padding: 14px;
+
+  }
+
+
+  .week-heading-row {
+
+    align-items: flex-start;
+
+    flex-direction: column;
+
+    gap: 6px;
+
+  }
+
+
+  .architecture-image-container {
+
+    min-height: 150px;
+
   }
 
 }
