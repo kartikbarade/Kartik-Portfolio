@@ -1,9 +1,9 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { useState } from "react";
 import {
-    FaArrowLeft,
-    FaExternalLinkAlt,
-    FaGithub,
+  FaArrowLeft,
+  FaExternalLinkAlt,
+  FaGithub,
 } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
@@ -72,6 +72,23 @@ const projects = [
     github:
       "https://github.com/kartikbarade/PlantShop-Figma-Design",
     live: "#",
+  },
+
+    {
+    id: "username-password-validator",
+    title: "Username & Password Validator",
+    category: "Websites",
+    image: "/projects/username-password-validator.png",
+    description:
+      "A secure and user-friendly web application that validates usernames and passwords using proper input validation rules.",
+    tech: [
+      "Python",
+      "Flask",
+      "HTML",
+      "CSS",
+    ],
+    github: "https://github.com/kartikbarade/Username-Password-Validator",
+    live: "https://username-password-validator.vercel.app/",
   },
 ];
 

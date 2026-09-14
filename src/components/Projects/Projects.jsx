@@ -107,6 +107,22 @@ const projects = [
   //   github: "https://github.com/kartikbarade",
   //   live: "#",
   // },
+
+  {
+    title: "Username & Password Validator",
+    category: "Websites",
+    image: "/projects/username-password-validator.png",
+    description:
+      "A web-based application that validates usernames and passwords using predefined validation rules and provides clear feedback to users.",
+    tech: [
+      "Python",
+      "Flask",
+      "HTML",
+      "CSS", 
+    ],
+    github: "https://github.com/kartikbarade/Username-Password-Validator",
+    live: "https://username-password-validator.vercel.app/",
+  },
 {
     title: "Plant App Design",
     category: "UI/UX",

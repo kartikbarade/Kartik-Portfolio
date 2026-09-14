@@ -1,11 +1,11 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import {
-    FaArrowLeft,
-    FaExpand,
-    FaExternalLinkAlt,
-    FaGithub,
-    FaTimes,
+  FaArrowLeft,
+  FaExpand,
+  FaExternalLinkAlt,
+  FaGithub,
+  FaTimes,
 } from "react-icons/fa";
 import { Link, useParams } from "react-router-dom";
 
@@ -158,6 +158,54 @@ const projects = [
     challenges:
       "Maintaining a simple interface while providing enough information for the user was the main design challenge. Creating a consistent layout across multiple screens also required careful planning.",
   },
+
+  {
+  id: "username-password-validator",
+  title: "Username & Password Validator",
+  category: "Websites",
+
+  image: "/projects/username-password-validator.png",
+
+  screenshots: [
+    "/projects/username-password-validator.png",
+    "/projects/username-password-validator1.png",
+    "/projects/username-password-validator2.png",
+    "/projects/username-password-validator3.png",
+  ],
+
+  description:
+    "A web-based username and password validation application built with Python and Flask to validate user credentials using predefined rules and provide clear validation feedback.",
+
+  tech: [
+    "Python",
+    "Flask",
+    "HTML",
+    "CSS",
+  ],
+
+  github:
+    "https://github.com/kartikbarade/Username-Password-Validator",
+
+  live: "https://username-password-validator.vercel.app/",
+
+  overview:
+    "Username & Password Validator is a simple web application that checks user-entered credentials against validation rules and provides immediate feedback. The project focuses on input validation, backend processing with Flask and a clean user interface.",
+
+  features: [
+    "Username validation",
+    "Password validation",
+    "Input validation rules",
+    "Clear validation messages",
+    "Flask backend integration",
+    "Responsive user interface",
+  ],
+
+  learned:
+    "I learned how to build a Flask-based web application, handle form input, implement validation logic and connect frontend components with backend functionality.",
+
+  challenges:
+    "The main challenge was designing validation rules that provide clear feedback while keeping the interface simple and easy to understand. Handling invalid inputs and displaying appropriate validation messages also required careful frontend and backend integration.",
+},
 ];
 
 function ProjectDetails() {
