@@ -206,6 +206,57 @@ const projects = [
   challenges:
     "The main challenge was designing validation rules that provide clear feedback while keeping the interface simple and easy to understand. Handling invalid inputs and displaying appropriate validation messages also required careful frontend and backend integration.",
 },
+{
+  id: "hand-gesture-volume-control",
+  title: "Hand Gesture Volume Control",
+  category: "Data & AI",
+  image: "/projects/hand-gesture-volume-control.png",
+  screenshots: [
+    "/projects/hand-gesture-volume-control1.png",
+    "/projects/hand-gesture-volume-control2.png",
+    "/projects/hand-gesture-volume-control3.png",
+    "/projects/hand-gesture-volume-control4.png",
+
+  ],
+
+  description:
+    "A real-time computer vision application that allows users to control Windows system volume using hand gestures detected through a webcam.",
+
+  tech: [
+    "Python",
+    "OpenCV",
+    "MediaPipe",
+    "PyCaw",
+    "Computer Vision",
+  ],
+
+  github:
+    "https://github.com/kartikbarade/Hand-Gesture-Volume-Control",
+
+  live: "",
+
+  overview:
+    "Hand Gesture Volume Control is a real-time computer vision project that enables touch-free control of Windows system volume. The application uses a webcam to detect hand landmarks through MediaPipe and calculates the distance between the thumb and index finger to control the volume level.",
+
+  features: [
+    "Real-time webcam hand detection",
+    "Thumb and index finger pinch gesture for volume control",
+    "Fist gesture for mute",
+    "Open hand gesture for unmute",
+    "Smooth volume adjustment",
+    "Real-time volume percentage display",
+    "FPS monitoring",
+    "Keyboard shortcuts",
+    "Windows system-volume integration",
+  ],
+
+  learned:
+    "I learned how to work with real-time computer vision, detect hand landmarks using MediaPipe, process webcam frames with OpenCV and connect gesture-based input with Windows system audio using PyCaw.",
+
+  challenges:
+    "The main challenge was making the volume control responsive while keeping the gesture detection stable. Mapping the distance between hand landmarks to a usable volume range and handling different gestures reliably required careful real-time processing.",
+},
+
 ];
 
 function ProjectDetails() {

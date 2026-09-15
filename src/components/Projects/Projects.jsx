@@ -133,6 +133,28 @@ const projects = [
     github: "https://github.com/kartikbarade/PlantShop-Figma-Design",
     live: "#",
   },
+ {
+  title: "Hand Gesture Volume Control",
+  category: "Data & AI",
+  image: "/projects/hand-gesture-volume-control.png",
+
+  description:
+    "A real-time computer vision application that controls Windows system volume using hand gestures detected through a webcam.",
+
+  tech: [
+    "Python",
+    "OpenCV",
+    "MediaPipe",
+    "PyCaw",
+    "Computer Vision",
+  ],
+
+  github:
+    "https://github.com/kartikbarade/Hand-Gesture-Volume-Control",
+
+  live: "#",
+},
+
 ];
 
 function Projects() {
