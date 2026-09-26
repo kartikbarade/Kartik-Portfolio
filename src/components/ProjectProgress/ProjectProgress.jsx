@@ -53,7 +53,7 @@ function ProjectProgress() {
               </span>
 
               <strong>
-                12%
+                30%
               </strong>
 
             </div>
@@ -124,7 +124,7 @@ function ProjectProgress() {
 
               AI-powered multi-agent system designed to
               automate customer interaction, lead
-              qualification and personalized sales &
+              qualification and personalized sales &amp;
               marketing activities.
 
             </p>
@@ -142,7 +142,7 @@ function ProjectProgress() {
               </span>
 
               <strong>
-                12%
+                30%
               </strong>
 
             </div>
@@ -150,7 +150,10 @@ function ProjectProgress() {
 
             <div className="progress-track">
 
-              <div className="progress-fill"></div>
+              <div
+                className="progress-fill"
+                style={{ width: "30%" }}
+              ></div>
 
             </div>
 
@@ -170,7 +173,7 @@ function ProjectProgress() {
                 </span>
 
                 <strong>
-                  Project Review &amp; System Architecture
+                  System Architecture &amp; Database Design
                 </strong>
 
               </div>
@@ -187,7 +190,7 @@ function ProjectProgress() {
 
                   <i></i>
 
-                  Completed
+                  In Progress
 
                 </strong>
 
@@ -215,7 +218,7 @@ function ProjectProgress() {
                   ✓
                 </span>
 
-                Project Review
+                Project Review-II
 
               </div>
 
@@ -226,7 +229,65 @@ function ProjectProgress() {
                   ✓
                 </span>
 
-                Project System architecture
+                System Architecture Planning
+
+              </div>
+
+
+              <div className="completed-item">
+
+                <span>
+                  ✓
+                </span>
+
+                Agent Interaction Flow
+
+              </div>
+
+            </div>
+
+
+
+            {/* =========================================
+                CURRENT WORK
+            ========================================= */}
+
+            <div className="completed-section">
+
+              <h4>
+                ◈ Current Work
+              </h4>
+
+
+              <div className="completed-item">
+
+                <span>
+                  ◈
+                </span>
+
+                Database Entity Planning
+
+              </div>
+
+
+              <div className="completed-item">
+
+                <span>
+                  ◈
+                </span>
+
+                Backend Module Structure
+
+              </div>
+
+
+              <div className="completed-item">
+
+                <span>
+                  ◈
+                </span>
+
+                RAG &amp; CRM Data Flow
 
               </div>
 
@@ -245,7 +306,7 @@ function ProjectProgress() {
               </span>
 
               <strong>
-                ... ; 
+                Multi-Agent Backend Development
               </strong>
 
             </div>
@@ -259,12 +320,14 @@ function ProjectProgress() {
             <div className="week-progress">
 
               <span>
-                WEEK 02
+                WEEK 03
               </span>
 
               <p>
-                Project Review,
-                System architecture are done.
+                System architecture and agent flow
+                are being finalized. Database design,
+                backend structure and RAG/CRM data flow
+                are currently in progress.
               </p>
 
             </div>

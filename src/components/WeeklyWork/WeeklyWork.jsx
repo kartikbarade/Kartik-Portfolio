@@ -24,37 +24,37 @@ import "./WeeklyWork.css";
 const weeks = [
   {
     id: 1,
-    title: "WEEK 01",
+    title: "STAGE 01",
     date: "Aug 3 — Aug 8, 2026",
     status: "completed",
   },
   {
     id: 2,
-    title: "WEEK 02",
+    title: "STAGE 02",
     date: "Sep 5 — Sep 10, 2026",
     status: "completed",
   },
   {
     id: 3,
-    title: "WEEK 03",
+    title: "STAGE 03",
     date: "Sep 16 — Sep 22, 2026",
-    status: "upcoming",
+    status: "completed",
   },
   {
     id: 4,
-    title: "WEEK 04",
+    title: "STAGE 04",
     date: "Sep 23 — Sep 29, 2026",
     status: "upcoming",
   },
   {
     id: 5,
-    title: "WEEK 05",
+    title: "STAGE 05",
     date: "Sep 30 — Oct 6, 2026",
     status: "upcoming",
   },
   {
     id: 6,
-    title: "WEEK 06",
+    title: "STAGE 06",
     date: "Oct 7 — Oct 13, 2026",
     status: "upcoming",
   },
@@ -154,7 +154,7 @@ function Check({ text }) {
 
 
 /* =========================================================
-   WEEK 01
+   STAGE 01
 ========================================================= */
 
 function WeekOne() {
@@ -172,7 +172,7 @@ function WeekOne() {
           <div className="week-heading-row">
 
             <h1>
-              WEEK 01
+              STAGE 01
             </h1>
 
             <span className="week-completed">
@@ -329,7 +329,7 @@ function WeekOne() {
         <div>
 
           <strong>
-            Week 01 Summary
+            Stage 01 Summary
           </strong>
 
           <p>
@@ -348,7 +348,7 @@ function WeekOne() {
 
 
 /* =========================================================
-   WEEK 02
+   STAGE 02
 ========================================================= */
 
 function WeekTwo() {
@@ -366,7 +366,7 @@ function WeekTwo() {
           <div className="week-heading-row">
 
             <h1>
-              WEEK 02
+              STAGE 02
             </h1>
 
             <span className="week-completed">
@@ -606,13 +606,13 @@ function WeekTwo() {
 
 
         {/* =========================================
-            WEEK 02 PPT
+            STAGE 02 PPT
         ========================================= */}
 
         <div className="week02-ppt-wrapper">
 
           <h4>
-            Week 02 Presentation
+            Stage 02 Presentation
           </h4>
 
           <FileCard
@@ -629,7 +629,7 @@ function WeekTwo() {
 
 
       {/* =========================================
-          WEEK 02 NOTE
+          STAGE 02 NOTE
       ========================================= */}
 
       <div className="weekly-note week02-note">
@@ -641,13 +641,283 @@ function WeekTwo() {
         <div>
 
           <strong>
-            Week 02 Summary
+            Stage 02 Summary
           </strong>
 
           <p>
             The first project review was completed and
             the architecture and project flow were
             finalized for the next development phase.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+  );
+}
+
+
+/* =========================================================
+   STAGE 03 - REVIEW III
+========================================================= */
+
+function WeekThree() {
+  return (
+    <div className="week-page">
+
+      {/* =========================================
+          WEEK HEADER
+      ========================================= */}
+
+      <div className="week-content-header">
+
+        <div>
+
+          <div className="week-heading-row">
+
+            <h1>
+              STAGE 03
+            </h1>
+
+            <span className="week-completed">
+              <FaCheckCircle />
+              IN PROGRESS
+            </span>
+
+          </div>
+
+          <p>
+            Project Review-III presentation and system architecture
+            are being finalized for the next development phase.
+          </p>
+
+        </div>
+
+        <div className="week-date">
+          Sep 16 — Sep 22, 2026
+        </div>
+
+      </div>
+
+
+      {/* =========================================
+          STATS
+      ========================================= */}
+
+      <div className="weekly-stats">
+
+        <Stat
+          icon={<FaTasks />}
+          color="green"
+          label="TASKS"
+          value="2 / 2"
+          sub="In Progress"
+        />
+
+        <Stat
+          icon={<FaProjectDiagram />}
+          color="purple"
+          label="ARCHITECTURE"
+          value="1"
+          sub="Completed"
+        />
+
+        <Stat
+          icon={<FaFilePowerpoint />}
+          color="blue"
+          label="PPT"
+          value="1"
+          sub="Uploaded"
+        />
+
+        <Stat
+          icon={<FaImages />}
+          color="pink"
+          label="IMAGES"
+          value="1"
+          sub="Added"
+        />
+
+      </div>
+
+
+      {/* =========================================
+          THREE COLUMNS
+      ========================================= */}
+
+      <div className="weekly-columns">
+
+        {/* Current Work */}
+
+        <section className="weekly-section">
+
+          <h3>
+            Current Work
+          </h3>
+
+          <div className="week03-current-work">
+
+            <div className="week03-work-list">
+
+              <div className="week03-work-item">
+                <FaCheckCircle />
+                <span>System Architecture Design</span>
+              </div>
+
+              <div className="week03-work-item">
+                <FaCheckCircle />
+                <span>Agent Interaction Flow</span>
+              </div>
+
+              <div className="week03-work-item">
+                <FaCircle />
+                <span>Backend Module Structure</span>
+              </div>
+
+            </div>
+
+          </div>
+
+        </section>
+
+
+        {/* Review III PPT */}
+
+        <section className="weekly-section">
+
+          <h3>
+            Review-III Presentation
+          </h3>
+
+          <FileCard
+            href="/projects/week03/Review-III.pptx"
+            type="ppt"
+            icon={<FaFilePowerpoint />}
+            name="Review-III.pptx"
+            description="Project Review-III Presentation"
+          />
+
+        </section>
+
+
+        {/* Next Milestone */}
+
+        <section className="weekly-section">
+
+          <h3>
+            Next Milestone
+          </h3>
+
+          <div className="week03-next-milestone">
+
+            <strong>
+              Multi-Agent Backend Development
+            </strong>
+
+            <p>
+              Development of Sales, Marketing and Lead Generation
+              agents with routing and backend integration.
+            </p>
+
+            <div className="milestone-status">
+              <span></span>
+              Upcoming
+            </div>
+
+          </div>
+
+        </section>
+
+      </div>
+
+
+      {/* =========================================
+          SYSTEM ARCHITECTURE
+      ========================================= */}
+
+      <section className="week03-architecture-section">
+
+        <div className="week03-architecture-heading">
+
+          <div className="week03-architecture-heading-icon">
+            <FaProjectDiagram />
+          </div>
+
+          <div>
+
+            <h3>
+              System Architecture
+            </h3>
+
+            <p>
+              Proposed system architecture and agent interaction
+              flow for the Sales and Marketing Agent project.
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <div className="week03-architecture-image-container">
+
+          <img
+            src="/projects/week03/system-architecture.png"
+            alt="System Architecture"
+            onError={(event) => {
+
+              event.currentTarget.style.display = "none";
+
+              event.currentTarget.parentElement.classList.add(
+                "image-load-error"
+              );
+
+            }}
+          />
+
+          <div className="week03-architecture-image-error">
+
+            <FaProjectDiagram />
+
+            <span>
+              System Architecture image not found
+            </span>
+
+            <small>
+              Put system-architecture.png inside
+              client/public/projects/week03/
+            </small>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+      {/* =========================================
+          STAGE 03 SUMMARY
+      ========================================= */}
+
+      <div className="weekly-note week03-note">
+
+        <div className="note-icon">
+          <FaClipboardCheck />
+        </div>
+
+        <div>
+
+          <strong>
+            Stage 03 Summary
+          </strong>
+
+          <p>
+            Project Review-III presentation was prepared and the
+            system architecture with agent interaction flow was
+            finalized. Backend module structure and the next
+            development phase are currently being planned.
           </p>
 
         </div>
@@ -862,8 +1132,13 @@ export default function WeeklyWork({ onClose }) {
             )}
 
 
+            {selectedWeek?.id === 3 && (
+              <WeekThree />
+            )}
+
+
             {selectedWeek &&
-              selectedWeek.id > 2 && (
+              selectedWeek.id > 3 && (
                 <UpcomingWeek
                   week={selectedWeek}
                 />

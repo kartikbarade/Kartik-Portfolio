@@ -446,7 +446,9 @@
 }
 
 
-/* Track */
+/* =========================================================
+   TRACK
+========================================================= */
 
 .progress-track {
   width: 100%;
@@ -463,10 +465,12 @@
 }
 
 
-/* Fill */
+/* =========================================================
+   FILL
+========================================================= */
 
 .progress-fill {
-  width: 10%;
+  width: 30%;
 
   height: 100%;
 
@@ -522,7 +526,9 @@
 }
 
 
-/* Status */
+/* =========================================================
+   STATUS
+========================================================= */
 
 .status {
   display: flex;
@@ -603,6 +609,146 @@
 
 
 /* =========================================================
+   CURRENT WORK
+   NEW CONTENT
+========================================================= */
+
+.current-work-section {
+  margin-top: 19px;
+
+  padding-top: 17px;
+
+  border-top: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+
+/* =========================================================
+   CURRENT WORK TITLE
+========================================================= */
+
+.current-work-section h4 {
+  display: flex;
+
+  align-items: center;
+
+  gap: 7px;
+
+  margin: 0 0 11px;
+
+  color: #eeeeF5;
+
+  font-size: 12px;
+}
+
+
+/* =========================================================
+   CURRENT WORK ITEM
+========================================================= */
+
+.current-work-item {
+  display: flex;
+
+  align-items: center;
+
+  gap: 9px;
+
+  margin-top: 8px;
+
+  padding: 7px 8px;
+
+  border-radius: 9px;
+
+  background: rgba(255, 255, 255, 0.025);
+
+  border: 1px solid rgba(255, 255, 255, 0.045);
+
+  color: #858397;
+
+  font-size: 10px;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.current-work-item:hover {
+  background: rgba(139, 78, 255, 0.07);
+
+  border-color: rgba(139, 78, 255, 0.18);
+
+  transform: translateX(2px);
+}
+
+
+/* =========================================================
+   CURRENT WORK ICON
+========================================================= */
+
+.current-work-icon {
+  width: 22px;
+  height: 22px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  border-radius: 7px;
+
+  color: #b18aff;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(137, 82, 255, 0.16),
+      rgba(93, 45, 190, 0.07)
+    );
+
+  border: 1px solid rgba(151, 94, 255, 0.20);
+
+  font-size: 9px;
+}
+
+
+/* =========================================================
+   CURRENT WORK CONTENT
+========================================================= */
+
+.current-work-content {
+  min-width: 0;
+
+  flex: 1;
+}
+
+.current-work-content strong {
+  display: block;
+
+  color: #dedbea;
+
+  font-size: 10px;
+
+  font-weight: 600;
+
+  line-height: 1.35;
+}
+
+.current-work-content span {
+  display: block;
+
+  margin-top: 2px;
+
+  color: #6f6b7e;
+
+  font-size: 8px;
+
+  line-height: 1.3;
+}
+
+
+/* =========================================================
    NEXT MILESTONE
 ========================================================= */
 
@@ -672,6 +818,18 @@
 
 
 /* =========================================================
+   WEEK 03 - HIGHLIGHT
+   NEW CONTENT
+========================================================= */
+
+.week-progress > span {
+  color: #9b70ff;
+
+  font-weight: 700;
+}
+
+
+/* =========================================================
    WEEKLY WORK BUTTON
 ========================================================= */
 
@@ -723,7 +881,9 @@
 }
 
 
-/* Hover */
+/* =========================================================
+   HOVER
+========================================================= */
 
 .weekly-work-button:hover {
   transform: translateY(-2px);
@@ -735,7 +895,9 @@
 }
 
 
-/* Icon */
+/* =========================================================
+   ICON
+========================================================= */
 
 .weekly-button-icon {
   width: 25px;
@@ -752,7 +914,9 @@
 }
 
 
-/* Text */
+/* =========================================================
+   TEXT
+========================================================= */
 
 .weekly-work-button span {
   flex: 1;
@@ -761,7 +925,9 @@
 }
 
 
-/* Arrow */
+/* =========================================================
+   ARROW
+========================================================= */
 
 .weekly-button-arrow {
   font-size: 10px;
@@ -804,6 +970,34 @@
 }
 
 
+/* =========================================================
+   MOBILE - CURRENT WORK
+========================================================= */
+
+@media (max-width: 768px) {
+
+  .current-work-section {
+    margin-top: 16px;
+
+    padding-top: 14px;
+  }
+
+  .current-work-item {
+    padding: 7px;
+  }
+
+  .current-work-icon {
+    width: 21px;
+    height: 21px;
+  }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
 @media (max-width: 520px) {
 
   .project-progress-card:hover {
@@ -832,6 +1026,22 @@
     grid-template-columns: 1fr;
 
     gap: 15px;
+  }
+
+  .current-work-section {
+    margin-top: 16px;
+  }
+
+  .current-work-item {
+    gap: 8px;
+  }
+
+  .current-work-content strong {
+    font-size: 9px;
+  }
+
+  .current-work-content span {
+    font-size: 7px;
   }
 
 }
