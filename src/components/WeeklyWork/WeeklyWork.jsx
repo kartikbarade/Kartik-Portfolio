@@ -37,7 +37,7 @@ const weeks = [
   {
     id: 3,
     title: "STAGE 03",
-    date: "Sep 16 — Sep 22, 2026",
+    date: "Sep 21 — Sep 26, 2026",
     status: "completed",
   },
   {
