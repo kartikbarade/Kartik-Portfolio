@@ -696,7 +696,7 @@ function WeekThree() {
         </div>
 
         <div className="week-date">
-          Sep 16 — Sep 22, 2026
+          Sep 21 — Sep 26, 2026
         </div>
 
       </div>
