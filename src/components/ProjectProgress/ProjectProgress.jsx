@@ -320,7 +320,7 @@ function ProjectProgress() {
             <div className="week-progress">
 
               <span>
-                WEEK 03
+                STAGE 03
               </span>
 
               <p>

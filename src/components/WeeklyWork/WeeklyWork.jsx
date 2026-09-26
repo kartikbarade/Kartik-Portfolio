@@ -1020,7 +1020,7 @@ export default function WeeklyWork({ onClose }) {
               </h2>
 
               <p>
-                Track my weekly progress, tasks,
+                Track my progress, tasks,
                 documents, code &amp; updates
               </p>
 
@@ -1054,7 +1054,7 @@ export default function WeeklyWork({ onClose }) {
           <aside className="weekly-timeline">
 
             <div className="timeline-title">
-              PROJECT WEEKS
+              PROJECT STAGES
             </div>
 
 
