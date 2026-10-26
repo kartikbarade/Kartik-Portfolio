@@ -6,16 +6,13 @@ import WeeklyWork from "../WeeklyWork/WeeklyWork";
 import "./ProjectProgress.css";
 
 function ProjectProgress() {
-
   const [showWeeklyWork, setShowWeeklyWork] = useState(false);
-
 
   /* =========================================
      LOCK MAIN PAGE SCROLL
   ========================================= */
 
   useEffect(() => {
-
     if (showWeeklyWork) {
       document.body.style.overflow = "hidden";
     } else {
@@ -25,42 +22,25 @@ function ProjectProgress() {
     return () => {
       document.body.style.overflow = "";
     };
-
   }, [showWeeklyWork]);
-
 
   return (
     <>
       <div className="project-progress-wrapper">
-
         <div className="project-progress-card">
-
 
           {/* =========================================
               COLLAPSED VIEW
           ========================================= */}
 
           <div className="project-mini">
-
-            <span className="project-mini-icon">
-              🎓
-            </span>
+            <span className="project-mini-icon">🎓</span>
 
             <div className="project-mini-text">
-
-              <span>
-                Project
-              </span>
-
-              <strong>
-                30%
-              </strong>
-
+              <span>Project</span>
+              <strong>50%</strong>
             </div>
-
           </div>
-
-
 
           {/* =========================================
               EXPANDED VIEW
@@ -68,314 +48,170 @@ function ProjectProgress() {
 
           <div className="project-expanded">
 
-
-            {/* =========================================
-                HEADER
-            ========================================= */}
+            {/* HEADER */}
 
             <div className="project-expanded-header">
-
-              <span>
-                FINAL YEAR PROJECT PROGRESS
-              </span>
+              <span>FINAL YEAR PROJECT PROGRESS</span>
 
               <div className="project-active">
                 <i></i>
                 ACTIVE
               </div>
-
             </div>
 
-
-
-            {/* =========================================
-                BADGE
-            ========================================= */}
+            {/* BADGE */}
 
             <div className="project-badge">
-
               🎓 FINAL YEAR PROJECT
-
             </div>
 
-
-
-            {/* =========================================
-                TITLE
-            ========================================= */}
+            {/* TITLE */}
 
             <h3>
-
               Sales &amp; Marketing
-
-              <span>
-                Agent Development
-              </span>
-
+              <span>Agent Development</span>
             </h3>
 
-
-
-            {/* =========================================
-                DESCRIPTION
-            ========================================= */}
+            {/* DESCRIPTION */}
 
             <p className="project-description">
-
               AI-powered multi-agent system designed to
               automate customer interaction, lead
-              qualification and personalized sales &amp;
-              marketing activities.
-
+              qualification, and personalized sales and
+              marketing activities through an integrated
+              website, chatbot, and Lead Agent.
             </p>
 
-
-
-            {/* =========================================
-                PROGRESS
-            ========================================= */}
+            {/* PROGRESS */}
 
             <div className="progress-header">
-
-              <span>
-                Project Progress
-              </span>
-
-              <strong>
-                30%
-              </strong>
-
+              <span>Project Progress</span>
+              <strong>50%</strong>
             </div>
-
 
             <div className="progress-track">
-
               <div
                 className="progress-fill"
-                style={{ width: "30%" }}
+                style={{ width: "50%" }}
               ></div>
-
             </div>
 
-
-
-            {/* =========================================
-                CURRENT PHASE
-            ========================================= */}
+            {/* CURRENT PHASE */}
 
             <div className="project-info">
-
-
               <div>
-
-                <span className="info-label">
-                  CURRENT PHASE
-                </span>
+                <span className="info-label">CURRENT PHASE</span>
 
                 <strong>
-                  System Architecture &amp; Database Design
+                  Website, Chatbot &amp; Lead Agent Development
                 </strong>
-
               </div>
-
-
 
               <div>
-
-                <span className="info-label">
-                  STATUS
-                </span>
+                <span className="info-label">STATUS</span>
 
                 <strong className="status">
-
                   <i></i>
-
                   In Progress
-
                 </strong>
-
               </div>
-
-
             </div>
 
-
-
-            {/* =========================================
-                COMPLETED
-            ========================================= */}
+            {/* COMPLETED */}
 
             <div className="completed-section">
-
-              <h4>
-                ✓ Recently Completed
-              </h4>
-
+              <h4>✓ Recently Completed</h4>
 
               <div className="completed-item">
-
-                <span>
-                  ✓
-                </span>
-
-                Project Review-II
-
+                <span>✓</span>
+                Project Review-III Preparation
               </div>
-
 
               <div className="completed-item">
-
-                <span>
-                  ✓
-                </span>
-
-                System Architecture Planning
-
+                <span>✓</span>
+                Website Development
               </div>
-
 
               <div className="completed-item">
-
-                <span>
-                  ✓
-                </span>
-
-                Agent Interaction Flow
-
+                <span>✓</span>
+                Chatbot Development
               </div>
 
+              <div className="completed-item">
+                <span>✓</span>
+                Lead Agent Development
+              </div>
             </div>
 
-
-
-            {/* =========================================
-                CURRENT WORK
-            ========================================= */}
+            {/* CURRENT WORK */}
 
             <div className="completed-section">
-
-              <h4>
-                ◈ Current Work
-              </h4>
-
+              <h4>◈ Current Work</h4>
 
               <div className="completed-item">
-
-                <span>
-                  ◈
-                </span>
-
-                Database Entity Planning
-
+                <span>◈</span>
+                Website and Backend Integration
               </div>
-
 
               <div className="completed-item">
-
-                <span>
-                  ◈
-                </span>
-
-                Backend Module Structure
-
+                <span>◈</span>
+                Chatbot Response Testing
               </div>
-
 
               <div className="completed-item">
-
-                <span>
-                  ◈
-                </span>
-
-                RAG &amp; CRM Data Flow
-
+                <span>◈</span>
+                Lead Management Workflow Testing
               </div>
-
             </div>
 
-
-
-            {/* =========================================
-                NEXT MILESTONE
-            ========================================= */}
+            {/* NEXT MILESTONE */}
 
             <div className="next-milestone">
-
-              <span>
-                NEXT MILESTONE
-              </span>
+              <span>NEXT MILESTONE</span>
 
               <strong>
-                Multi-Agent Backend Development
+                System Integration, Testing &amp; Improvements
               </strong>
-
             </div>
 
-
-
-            {/* =========================================
-                WEEK
-            ========================================= */}
+            {/* WEEK */}
 
             <div className="week-progress">
-
-              <span>
-                STAGE 03
-              </span>
+              <span>STAGE 04</span>
 
               <p>
-                System architecture and agent flow
-                are being finalized. Database design,
-                backend structure and RAG/CRM data flow
-                are currently in progress.
+                Website development, chatbot development, and
+                Lead Agent development have been completed.
+                The next focus is integration, testing, and
+                improving the overall project workflow.
               </p>
-
             </div>
 
-
-
-            {/* =========================================
-                VIEW WEEKLY WORK BUTTON
-            ========================================= */}
+            {/* VIEW WEEKLY WORK BUTTON */}
 
             <button
               className="weekly-work-button"
               onClick={() => setShowWeeklyWork(true)}
             >
-
               <div className="weekly-button-icon">
                 <FaCalendarAlt />
               </div>
 
-              <span>
-                View Weekly Work
-              </span>
+              <span>View Weekly Work</span>
 
               <FaArrowRight className="weekly-button-arrow" />
-
             </button>
-
-
           </div>
-
         </div>
-
       </div>
 
-
-
-      {/* =========================================
-          WEEKLY WORK FULL SCREEN PAGE
-      ========================================= */}
+      {/* WEEKLY WORK FULL SCREEN PAGE */}
 
       {showWeeklyWork && (
-
         <WeeklyWork
           onClose={() => setShowWeeklyWork(false)}
         />
-
       )}
-
     </>
   );
 }

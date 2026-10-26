@@ -43,8 +43,8 @@ const weeks = [
   {
     id: 4,
     title: "STAGE 04",
-    date: "Sep 23 — Sep 29, 2026",
-    status: "upcoming",
+    date: "Oct 10 — Oct 26, 2026",
+    status: "completed",
   },
   {
     id: 5,
@@ -930,6 +930,157 @@ function WeekThree() {
 
 
 /* =========================================================
+   STAGE 04 - WEBSITE, CHATBOT & LEAD AGENT
+========================================================= */
+
+function WeekFour() {
+  const screenshots = [
+    {
+      title: "Website Homepage",
+      src: "/projects/week04/website-homepage.png",
+      alt: "Samarth AI Sales Agent website homepage",
+    },
+    {
+      title: "Website Enquiry Form",
+      src: "/projects/week04/enquiry-form.png",
+      alt: "Website enquiry form",
+    },
+    {
+      title: "Chatbot Interface",
+      src: "/projects/week04/chatbot-interface.png",
+      alt: "Chatbot interface on the website",
+    },
+    {
+      title: "Owner dashboard",
+      src: "/projects/week04/Owner-dashboard.png",
+      alt: "owner dashboard example",
+    },
+    {
+      title: "Lead Management",
+      src: "/projects/week04/lead-management.png",
+      alt: "Lead management view",
+    },
+  ];
+
+  return (
+    <div className="week-page week04-page">
+      <div className="week-content-header">
+        <div>
+          <div className="week-heading-row">
+            <h1>STAGE 04</h1>
+            <span className="week-completed">
+              <FaCheckCircle />
+              COMPLETED
+            </span>
+          </div>
+          <p>
+            Website, chatbot and Lead Agent development completed for the
+            Samarth AI Sales Agent project.
+          </p>
+        </div>
+        <div className="week-date">Oct 10 — Oct 26, 2026</div>
+      </div>
+
+      <div className="weekly-stats">
+        <Stat icon={<FaTasks />} color="green" label="MODULES" value="3 / 3" sub="Completed" />
+        <Stat icon={<FaCode />} color="purple" label="FEATURES" value="3" sub="Implemented" />
+        <Stat icon={<FaImages />} color="pink" label="IMAGES" value="5" sub="Screenshots" />
+        <Stat icon={<FaCheckCircle />} color="blue" label="STATUS" value="100%" sub="Completed" />
+      </div>
+
+      <div className="weekly-columns week04-columns">
+        <section className="weekly-section">
+          <h3>Work Completed</h3>
+          <Check text="Completed the project website" />
+          <Check text="Integrated the website chatbot" />
+          <Check text="Completed the Lead Agent module" />
+          <Check text="Connected the main user flow across modules" />
+        </section>
+
+        <section className="weekly-section">
+          <h3>Selected Functions</h3>
+          <div className="week04-code-item">
+            <code>find_match()</code>
+            <span>Find a relevant FAQ or knowledge-base response.</span>
+          </div>
+          <div className="week04-code-item">
+            <code>validate()</code>
+            <span>Check submitted input before processing.</span>
+          </div>
+          <div className="week04-code-item">
+            <code>create()</code>
+            <span>Create a lead record from submitted details.</span>
+          </div>
+          <div className="week04-code-item">
+            <code>update_status()</code>
+            <span>Update a lead's progress status.</span>
+          </div>
+          <small className="week04-code-note">
+           
+          </small>
+        </section>
+
+        <section className="weekly-section">
+          <h3>Key Attributes</h3>
+          <div className="week04-attribute-list">
+            <span>Website: navigation, content, enquiry details</span>
+            <span>Chatbot: user message, matched answer, response</span>
+            <span>Lead: name, contact details, requirement, status</span>
+            <span>Integration: frontend requests and backend responses</span>
+          </div>
+        </section>
+      </div>
+
+      <section className="week04-gallery-section">
+        <div className="week04-gallery-heading">
+          <div className="week04-gallery-icon"><FaImages /></div>
+          <div>
+            <h3>Website, Chatbot &amp; Lead Agent Screenshots</h3>
+            <p>Five project views from the completed modules.</p>
+          </div>
+        </div>
+        <div className="week04-gallery">
+          {screenshots.map((screenshot) => (
+            <figure className="week04-gallery-card" key={screenshot.src}>
+              <div className="week04-gallery-image-wrap">
+                <img
+                  src={screenshot.src}
+                  alt={screenshot.alt}
+                  loading="lazy"
+                  onError={(event) => {
+                    event.currentTarget.style.display = "none";
+                    event.currentTarget.parentElement.classList.add("image-load-error");
+                  }}
+                />
+                <div className="week04-gallery-placeholder">
+                  <FaImages />
+                  <span>Screenshot not found</span>
+                  <small>Place the image in client/public/projects/week04/</small>
+                </div>
+              </div>
+              <figcaption>{screenshot.title}</figcaption>
+            </figure>
+          ))}
+        </div>
+      </section>
+
+      <div className="weekly-note week04-note">
+        <div className="note-icon"><FaClipboardCheck /></div>
+        <div>
+          <strong>Stage 04 Summary</strong>
+          <p>
+            The website, chatbot and Lead Agent have been completed. The next
+            step is to test the integrated workflow, resolve any issues and
+            prepare the project for demonstration.
+          </p>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+
+/* =========================================================
    UPCOMING WEEK
 ========================================================= */
 
@@ -1137,8 +1288,13 @@ export default function WeeklyWork({ onClose }) {
             )}
 
 
+            {selectedWeek?.id === 4 && (
+              <WeekFour />
+            )}
+
+
             {selectedWeek &&
-              selectedWeek.id > 3 && (
+              selectedWeek.id > 4 && (
                 <UpcomingWeek
                   week={selectedWeek}
                 />

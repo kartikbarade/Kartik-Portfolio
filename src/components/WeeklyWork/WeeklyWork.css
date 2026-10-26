@@ -2131,3 +2131,197 @@
     min-height: 150px;
   }
 }
+
+
+/* =========================================================
+   WEEK 04 - ADDITIVE STYLES ONLY
+   Existing Week 01-03 styles are intentionally untouched.
+========================================================= */
+
+.week04-page .week04-columns {
+  align-items: stretch;
+}
+
+.week04-code-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin: 0 0 9px;
+  padding: 8px 9px;
+  border: 1px solid rgba(166, 108, 255, 0.12);
+  border-radius: 7px;
+  background: rgba(166, 108, 255, 0.035);
+}
+
+.week04-code-item code {
+  color: #b99aff;
+  font-family: Consolas, "Courier New", monospace;
+  font-size: 8px;
+  font-weight: 700;
+}
+
+.week04-code-item span,
+.week04-code-note {
+  color: #8a849b;
+  font-size: 7px;
+  line-height: 1.5;
+}
+
+.week04-code-note {
+  display: block;
+  margin-top: 4px;
+  color: #a58c60;
+}
+
+.week04-attribute-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.week04-attribute-list span {
+  display: block;
+  padding: 8px 9px;
+  border: 1px solid rgba(255, 255, 255, 0.055);
+  border-radius: 7px;
+  background: rgba(255, 255, 255, 0.018);
+  color: #aaa4b8;
+  font-size: 7px;
+  line-height: 1.5;
+}
+
+.week04-gallery-section {
+  margin-top: 16px;
+  padding: 14px;
+  border: 1px solid rgba(166, 108, 255, 0.12);
+  border-radius: 10px;
+  background: rgba(13, 12, 24, 0.72);
+}
+
+.week04-gallery-heading {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin-bottom: 12px;
+}
+
+.week04-gallery-icon {
+  width: 30px;
+  height: 30px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  color: #a66cff;
+  background: rgba(166, 108, 255, 0.09);
+  font-size: 12px;
+}
+
+.week04-gallery-heading h3 {
+  margin: 0;
+  color: #e8e5f0;
+  font-size: 10px;
+  font-weight: 800;
+}
+
+.week04-gallery-heading p {
+  margin: 4px 0 0;
+  color: #777186;
+  font-size: 7px;
+  line-height: 1.5;
+}
+
+.week04-gallery {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.week04-gallery-card {
+  min-width: 0;
+  margin: 0;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.065);
+  border-radius: 8px;
+  background: #090912;
+}
+
+.week04-gallery-image-wrap {
+  position: relative;
+  min-height: 130px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: #080811;
+}
+
+.week04-gallery-image-wrap img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 130px;
+  max-height: 260px;
+  object-fit: contain;
+}
+
+.week04-gallery-placeholder {
+  display: none;
+  position: absolute;
+  inset: 0;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 7px;
+  padding: 12px;
+  color: #777186;
+  text-align: center;
+}
+
+.week04-gallery-placeholder svg {
+  color: #a66cff;
+  font-size: 20px;
+}
+
+.week04-gallery-placeholder span {
+  font-size: 8px;
+}
+
+.week04-gallery-placeholder small {
+  color: #5f596e;
+  font-size: 6px;
+  line-height: 1.4;
+}
+
+.week04-gallery-image-wrap.image-load-error .week04-gallery-placeholder {
+  display: flex;
+}
+
+.week04-gallery-card figcaption {
+  padding: 8px 9px;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  color: #bcb5cc;
+  font-size: 8px;
+  font-weight: 700;
+}
+
+.week04-note {
+  border-color: rgba(166, 108, 255, 0.14);
+  background: linear-gradient(135deg, rgba(126, 67, 255, 0.045), rgba(126, 67, 255, 0.012));
+}
+
+@media (max-width: 650px) {
+  .week04-gallery-section {
+    padding: 10px;
+  }
+
+  .week04-gallery {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .week04-gallery-image-wrap,
+  .week04-gallery-image-wrap img {
+    min-height: 160px;
+  }
+}
