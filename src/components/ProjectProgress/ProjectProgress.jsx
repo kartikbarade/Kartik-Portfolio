@@ -124,7 +124,7 @@ function ProjectProgress() {
 
               <div className="completed-item">
                 <span>✓</span>
-                Project Review-III Preparation
+                Project Review-IV Preparation
               </div>
 
               <div className="completed-item">
